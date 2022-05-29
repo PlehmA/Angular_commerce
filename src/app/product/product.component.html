@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="card mb-3">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{{ product.image }}" class="img-fluid rounded-start p-2" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.title }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
+                    <ng-template #t let-fill="fill">
+                        <span class="star" [class.full]="fill === 100">
+                          <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                        </span>
+                    </ng-template>
+                    <ngb-rating [rate]="rating" [starTemplate]="t"></ngb-rating>
+                    <p class="card-text">Rating: {{ rating }}</p>
+                    <p class="card-text">Rating count: {{ product.rating.count }}</p>
+                    <h1>Price: {{ product.price }} US$</h1>
+                    <button class="btn btn-outline-primary mt-5">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
